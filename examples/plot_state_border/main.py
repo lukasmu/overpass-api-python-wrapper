@@ -26,9 +26,9 @@ if not(os.path.isfile(XML_FILE)):
 	response = api.get(QUERY, responseformat="xml")
 
 	# write xml file
-	f = open(XML_FILE, 'w')
+	f = open(XML_FILE, 'w', encoding="utf-8")
 	# encode response in UTF-8 because name translation contain non-ascii characters
-	f.write(response.encode('utf-8'))
+	f.write(response)
 	f.close()
 
 	# free up memory
